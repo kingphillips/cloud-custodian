@@ -1,0 +1,8 @@
+policies: 
+  - name: stop-after-hours
+    resources: ec2
+    filters:
+      - type: offhour
+        tag: custodianOffhours
+        default_tz: et 
+        offho

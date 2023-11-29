@@ -1,0 +1,26 @@
+policies: 
+  - name: stop-after-hours
+    resources: ec2
+    filters:
+      - type: offhour
+        tag: custodianOffhours
+        default_tz: et 
+        offhour: 19 
+      - type: instance-age
+        hours: 1 
+    actions:   
+      - stop   
+    
+  - name: start-after-hours
+    resource: ec2
+    filters:
+      - type: onhour
+        tag: custodianOffhours
+        default_tz: et 
+        onhour: 6 
+      - type: value 
+        value: 1    
+        key: LaunchTime 
+        op: less-than 
+        value_type: age 
+    actio    

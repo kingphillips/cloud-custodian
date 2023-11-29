@@ -1,0 +1,3 @@
+policies: 
+  - name: stop-after-hours
+    

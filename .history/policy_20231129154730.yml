@@ -1,0 +1,6 @@
+policies: 
+  - name: stop-after-hours
+    resources: ec2
+    filters:
+      - type: offhour
+      
